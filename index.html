@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>添加索引值</title>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementsByTagName('input')
+            var oP = document.getElementsByTagName('p')
+            var arr = ['杨一', '杨二', '杨三']
+            //想建立“匹配”或“对应”关系，就使用索引值
+
+            for (var i = 0; i < oBtn.length; i++) {
+                oBtn[i].index = i  //也是一个自定义属性（这种做法一般称为添加索引值）
+                oBtn[i].onclick = function () {
+                    this.value = arr[this.index]
+                    oP[this.index].innerHTML = arr[this.index]
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="按钮">
+    <input type="button" value="按钮">
+    <input type="button" value="按钮">
+    <p>A</p>
+    <p>B</p>
+    <p>C</p>
+</body>
+
+</html>
